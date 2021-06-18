@@ -67,14 +67,6 @@ const TopCountryData = styled.div`
   color: #fff;
 `;
 
-// const TopCountryDataItem = styled.div`
-//   font-size: 12px;
-//   padding-bottom: 7px;
-//   margin-top: 5px;
-//   margin-right: 30px;
-//   color: #fff;
-// `;
-
 const ReportContainer = styled.div`
   width: 100%;
   border-top: 1px solid #8eb6f9;

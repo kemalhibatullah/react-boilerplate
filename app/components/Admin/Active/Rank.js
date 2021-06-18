@@ -18,7 +18,7 @@ const Rank = () => {
     axios
       .get('https://covid19.mathdro.id/api/confirmed')
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setCountryRank(res.data);
       })
       .catch(err => {
