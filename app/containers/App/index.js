@@ -48,6 +48,12 @@ const Title = styled.div`
 
 const MainContainer = styled.div`
   display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default function App() {

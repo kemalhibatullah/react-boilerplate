@@ -4,6 +4,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import axios from 'axios';
 import NumberFormat from 'react-number-format';
 import Graph from './Graph';
+import Rank from './Rank';
 
 const ActiveContainer = styled.div`
   flex: 35;
@@ -12,6 +13,11 @@ const ActiveContainer = styled.div`
   padding-bottom: 30px;
   background-color: #4185f5;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+
+  @media screen and (max-width: 960px) {
+    margin-top: 30px;
+    width: 95%;
+  }
 `;
 
 const Title = styled.div`
@@ -57,23 +63,20 @@ const TopCountryData = styled.div`
   justify-content: space-between;
   font-size: 12px;
   padding-bottom: 7px;
-  margin-left: 30px;
   margin-right: 30px;
   color: #fff;
-  border-bottom: 0.5px solid #8eb6f9;
 `;
 
-const TopCountryDataItem = styled.div`
-  font-size: 12px;
-  padding-bottom: 7px;
-  margin-top: 5px;
-  margin-right: 30px;
-  color: #fff;
-`;
+// const TopCountryDataItem = styled.div`
+//   font-size: 12px;
+//   padding-bottom: 7px;
+//   margin-top: 5px;
+//   margin-right: 30px;
+//   color: #fff;
+// `;
 
 const ReportContainer = styled.div`
   width: 100%;
-  margin-top: 30px;
   border-top: 1px solid #8eb6f9;
 `;
 
@@ -125,22 +128,9 @@ class Active extends Component {
         <DataGraph>
           <Graph />
         </DataGraph>
-        <TopCountry>Top country positive</TopCountry>
+        <TopCountry>Top country by city confirmed</TopCountry>
         <TopCountryData>
-          <TopCountryDataItem>India</TopCountryDataItem>
-          <TopCountryDataItem>123</TopCountryDataItem>
-        </TopCountryData>
-        <TopCountryData>
-          <TopCountryDataItem>India</TopCountryDataItem>
-          <TopCountryDataItem>123</TopCountryDataItem>
-        </TopCountryData>
-        <TopCountryData>
-          <TopCountryDataItem>India</TopCountryDataItem>
-          <TopCountryDataItem>123</TopCountryDataItem>
-        </TopCountryData>
-        <TopCountryData>
-          <TopCountryDataItem>India</TopCountryDataItem>
-          <TopCountryDataItem>123</TopCountryDataItem>
+          <Rank />
         </TopCountryData>
         <ReportContainer>
           <Report>

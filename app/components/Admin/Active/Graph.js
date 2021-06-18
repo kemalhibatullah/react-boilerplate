@@ -16,8 +16,8 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 CustomTooltip.propTypes = {
-  active: PropTypes.array.isRequired,
-  payload: PropTypes.array.isRequired,
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 };
 
 class Graph extends Component {
@@ -45,7 +45,7 @@ class Graph extends Component {
     const { posts } = this.state;
     return (
       <BarChart
-        width={335}
+        width={300}
         height={100}
         data={posts}
         margin={{
