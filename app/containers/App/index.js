@@ -32,6 +32,10 @@ const Side = styled.div`
   flex: 20;
   max-height: 100%;
   border-right: 0.5px solid #cdcdce;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const Main = styled.div`

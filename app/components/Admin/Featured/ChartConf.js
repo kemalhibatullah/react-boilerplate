@@ -52,7 +52,7 @@ class ChartConf extends Component {
 
   render() {
     const { posts } = this.state;
-    console.log(posts);
+    // console.log(posts);
     return (
       <Container>
         <ResponsiveContainer width="100%" height="100%">

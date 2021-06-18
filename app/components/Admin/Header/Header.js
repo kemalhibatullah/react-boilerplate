@@ -1,18 +1,22 @@
 import React from 'react';
-import { FaBell, FaChevronDown } from 'react-icons/fa';
+import { FaBell, FaChevronDown, FaAlignJustify } from 'react-icons/fa';
 import Container from './Container';
 import Logo from './Logo';
 import LogoImg from '../../../images/codemi.png';
 import Navbar from './Navbar';
 import ProfileImg from '../../../images/profile.jpg';
 import RightMenu from './RightMenu';
+import LeftMenu from './LeftMenu';
 import Profile from './Profile';
 
 function Header() {
   return (
     <Container>
       <Navbar>
-        <Logo src={LogoImg} />
+        <LeftMenu>
+          <FaAlignJustify size={18} />
+          <Logo src={LogoImg} />
+        </LeftMenu>
         <RightMenu>
           <FaBell style={{ margin: '20px', cursor: 'pointer' }} />
           <Profile src={ProfileImg} />
