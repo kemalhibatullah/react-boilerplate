@@ -55,7 +55,7 @@ const ListBox = props => (
         </TableTR>
       </tbody>
     </Table>
-    {props.index + 1 === 10 ? <Sparator>. . .</Sparator> : ''}
+    {props.index + 1 === 7 ? <Sparator>. . .</Sparator> : ''}
   </Container>
 );
 

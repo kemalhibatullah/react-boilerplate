@@ -70,7 +70,7 @@ class Graph extends Component {
       <Container>
         <BarChart
           width={300}
-          height={100}
+          height={80}
           data={posts}
           margin={{
             top: 0,

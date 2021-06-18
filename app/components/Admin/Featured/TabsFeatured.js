@@ -4,6 +4,9 @@ import 'react-tabs/style/react-tabs.css';
 import styled from 'styled-components';
 import axios from 'axios';
 import NumberFormat from 'react-number-format';
+import ChartConf from './ChartConf';
+import ChartRecov from './ChartRecov';
+import ChartDea from './ChartDea';
 
 const Value = styled.div`
   font-size: 32px;
@@ -19,18 +22,21 @@ class TabsFeatured extends Component {
     super(props);
 
     this.state = {
-      posts: {},
+      postsconfirmed: [],
+      postsrecovered: [],
+      postsdeaths: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get('https://covid19.mathdro.id/api/countries/Indonesia')
+      .get('https://covid19.mathdro.id/api/countries/India')
       .then(response => {
-        console.log(response.data.confirmed);
-        console.log(response.data.recovered);
-        console.log(response.data.deaths.value);
-        this.setState({ posts: response.data.confirmed });
+        this.setState({
+          postsconfirmed: response.data.confirmed,
+          postsrecovered: response.data.recovered,
+          postsdeaths: response.data.deaths,
+        });
       })
       .catch(error => {
         console.log(error);
@@ -38,39 +44,51 @@ class TabsFeatured extends Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const { postsconfirmed, postsrecovered, postsdeaths } = this.state;
     // console.log("asd")
     return (
       <Tabs>
         <TabList>
           <Tab>
-            Confirmed - Indonesia
+            Confirmed - India
             <Value>
               <NumberFormat
                 thousandSeparator
                 displayType="text"
-                value={posts.value}
+                value={postsconfirmed.value}
               />
             </Value>
           </Tab>
           <Tab>
-            Recovered - Indonesia
-            <Value>123</Value>
+            Recovered - India
+            <Value>
+              <NumberFormat
+                thousandSeparator
+                displayType="text"
+                value={postsrecovered.value}
+              />
+            </Value>
           </Tab>
           <Tab>
-            Deaths - Indonesia
-            <Value>123</Value>
+            Deaths - India
+            <Value>
+              <NumberFormat
+                thousandSeparator
+                displayType="text"
+                value={postsdeaths.value}
+              />
+            </Value>
           </Tab>
         </TabList>
 
         <TabPanel>
-          <h2>Any content 1</h2>
+          <ChartConf />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <ChartRecov />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
+          <ChartDea />
         </TabPanel>
       </Tabs>
     );

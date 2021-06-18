@@ -12,6 +12,8 @@ import Header from 'components/Admin/Header/Header';
 import SideMenu from 'components/Admin/SideMenu/SideMenu';
 import Featured from 'components/Admin/Featured/Featured';
 import Active from 'components/Admin/Active/Active';
+import CityActive from 'components/Admin/City/Active/CityActive';
+import CityConf from 'components/Admin/City/Conf/CityConf';
 
 const Wrapper = styled.div`
   display: flex;
@@ -49,6 +51,7 @@ const Title = styled.div`
 const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
 
   @media screen and (max-width: 960px) {
     display: flex;
@@ -69,6 +72,10 @@ export default function App() {
           <MainContainer>
             <Featured />
             <Active />
+          </MainContainer>
+          <MainContainer>
+            <CityActive />
+            <CityConf />
           </MainContainer>
         </Main>
       </Container>

@@ -12,7 +12,7 @@ const RankList = styled.ol`
 const Rank = () => {
   const [countryRank, setCountryRank] = useState([]);
   const [indonesiaNumber, setIndonesiaNumber] = useState(0);
-  const [showRow] = useState(10);
+  const [showRow] = useState(7);
 
   useEffect(() => {
     axios
